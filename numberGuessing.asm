@@ -15,7 +15,7 @@
         syscall
         move $t0, $v0   		        # Move input to $t0
 
-        beq $t0, 10, _right_input	# If $t0 eq 10 go to _right_input
+        beq $t0, 10, _right_input	    # If $t0 eq 10 go to _right_input
 
         la $a0, my_string_false		    # Load my_string_false in $a0
         li $v0, 4
