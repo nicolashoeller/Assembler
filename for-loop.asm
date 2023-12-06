@@ -8,9 +8,9 @@ main:
 	
 forLoop:
 
-	bgeu $t0, 8, endLoop
-	remu $t1, $t0, 2
-	beq $t1, 0, printInt
+	bgeu $t0, 8, endLoop		# Test if $t0 is ge 8
+	remu $t1, $t0, 2		# Modulo
+	beq $t1, 0, printInt		# If $t1 (modulo) is 0 goto printInt
 	add $t0, $t0, 1
 	
 printInt:
@@ -19,6 +19,6 @@ printInt:
 	li $v0, 1
 	syscall
 	add $t0, $t0, 1
-	j forLoop
+	j forLoop			# Jump to loop
 
 endLoop:
