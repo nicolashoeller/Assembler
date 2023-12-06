@@ -8,7 +8,7 @@ main:
 	
 forLoop:
 
-	bgeu $t0, 10, endLoop
+	bgeu $t0, 8, endLoop
 	remu $t1, $t0, 2
 	beq $t1, 0, printInt
 	add $t0, $t0, 1
