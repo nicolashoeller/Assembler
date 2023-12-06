@@ -1,7 +1,7 @@
 .text
 	main:
 	
-	li $t0, 11
+	li $t0, 10
 	li $t1, 2
 	
 	div $t0, $t0, $t1
