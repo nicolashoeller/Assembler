@@ -1,37 +1,25 @@
 .globl main
 
-.text
-
-	main:
+	li $t1, 25
+	li $t0, 5
+	mul $t2, $t0, $t1
 	
-	li $t0, 25
-	li $t1, 5
-	li $t2, 25
-	li $t3, 3
+main: 
 	
-	while_schleife_ggt: 		# ggt
-	beq $t0, $t1, kGv
-	beq $t0, 1, kGv
-	beq $t1, 1, kGv
+	beq $t1, $t0, end_loop
+	blt $t1, $t0, aBiggerB
+	blt $t0, $t1, bBiggerA
 	
-	bgt $t0, $t1, subtraktion_t0
-	j subtraktion_t1
+aBiggerB:
+	sub $t0, $t0, $t1		
+	j main	
 	
-	subtraktion_t0:
+bBiggerA:
+	sub $t1, $t1, $t0		
+	j main			
 	
-	sub $t0, $t0, $t1
-	j while_schleife_ggt
-	
-	subtraktion_t1:
-	
-	sub $t1, $t1, $t0
-	j while_schleife_ggt
-	
-	kGv:
-	
-	mul $t2, $t2, $t3
-	div $a0, $t2, $t0
-	
+end_loop:
+	div $t1, $t2, $t0
+	move $a0, $t1
 	li $v0, 1
-	
 	syscall
