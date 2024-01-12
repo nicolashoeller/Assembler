@@ -1,12 +1,12 @@
 .globl main
 
 .data
-	my_string: .asciiz "Guess the number between 0 and 20\n"
-    	my_string_false: .asciiz "False, try again!\n\n"
-    	my_string_right: .asciiz "You'r right, 7 is the right number!!\n"
+my_string: .asciiz "Guess the number between 0 and 20\n"
+my_string_false: .asciiz "False, try again!\n\n"
+my_string_right: .asciiz "You'r right, 7 is the right number!!\n"
 
 .text
-	main:
+main:
 	
 	la $a0, my_string
 	li $v0, 4       		        # Syscall for printf()
