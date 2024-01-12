@@ -1,11 +1,11 @@
 .globl main
 
 .data 
-	hello_world: .asciiz "Hello World!\n"
-	fuck_the_world: .asciiz "I'm gonna fuck the you\n"
+hello_world: .asciiz "Hello World!\n"
+fuck_the_world: .asciiz "I'm gonna fuck the you\n"
 	
 .text
-	main:
+main:
 	
 	la $a0, hello_world
 	li $v0, 4

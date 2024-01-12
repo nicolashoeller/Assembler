@@ -1,6 +1,6 @@
 .globl main
 	li $t0, 10
-	main:
+main:
 
 	li $t1, 2
 	
