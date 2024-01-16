@@ -2,6 +2,7 @@
 
 .data
 
+average: .asciiz "The average of the array is: "
 array: .word 1,2,3,4,5,6,7,8,9
 lenght: .float 9.0
 
@@ -25,6 +26,9 @@ berechnung:
 	j exit
 
 exit:
+	la $a0, average
+	li $v0, 4
+	syscall
 	mov.s $f12, $f0			# Move $f2 in $f12
 	li $v0, 2			# Print float
 	syscall
